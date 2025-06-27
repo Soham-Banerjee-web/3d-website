@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>3D Interactive Portfolio - Fixed</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="loading-screen" id="loadingScreen">
+        <div class="loading-text">Loading 3D Experience...</div>
+    </div>
+
+    <div class="performance-controls" id="performanceControls">
+        <div>Performance Controls (Press P to toggle)</div>
+        <button onclick="setQuality('low')">Low Quality</button>
+        <button onclick="setQuality('medium')">Medium Quality</button>
+        <button onclick="setQuality('high')">High Quality</button>
+        <button onclick="toggleShadows()">Toggle Shadows</button>
+        <button onclick="toggleAnimations()">Toggle Animations</button>
+        <div>FPS: <span id="fpsCounter">--</span></div>
+    </div>
+
+    <div class="debug-info" id="debugInfo">
+        <div>Press 'D' to toggle debug info</div>
+        <div>Scene: <span id="debugScene">-</span></div>
+        <div>Scroll: <span id="debugScroll">0%</span></div>
+        <div>Camera: <span id="debugCamera">-</span></div>
+        <div>Objects: <span id="debugObjects">-</span></div>
+        <div>Draw Calls: <span id="debugDrawCalls">-</span></div>
+    </div>
+
+    <div class="app-container" id="appContainer">
+        <div class="canvas-container" id="canvasContainer"></div>
+        
+        <div class="ui-overlay" id="uiOverlay">
+            <div class="scene-info" id="sceneInfo">
+                <h1 id="sceneTitle">Tech Enthusiast & Adventure Seeker</h1>
+                <p id="sceneDescription">Welcome to my interactive portfolio</p>
+                
+                <div class="projects-grid" id="projectsGrid">
+                    <div class="project-card">
+                        <h3>AWS Machine Learning</h3>
+                        <p>Cloud-based ML solutions</p>
+                    </div>
+                    <div class="project-card">
+                        <h3>React Dashboard</h3>
+                        <p>Interactive data visualization</p>
+                    </div>
+                    <div class="project-card">
+                        <h3>3D Web Experience</h3>
+                        <p>Three.js interactive portfolio</p>
+                    </div>
+                    <div class="project-card">
+                        <h3>Mobile Adventure App</h3>
+                        <p>Travel and exploration platform</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="scroll-indicator">
+                <div class="progress-bar">
+                    <div class="progress-fill" id="progressFill"></div>
+                </div>
+                <p id="scrollText">Scroll to explore • 0%</p>
+            </div>
+        </div>
+        
+        <div class="scroll-content"></div>
+    </div>
+
+    <script src="script.js"></script>
+    <link rel="stylesheet" href="style.css">
+</body>
+</html>
